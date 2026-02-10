@@ -5,7 +5,9 @@ services:
       - "5434:5432"
     restart: always
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: manzi123
+      POSTGRES_DB: event-tickets
 
   adminer:
     image: adminer:latest
