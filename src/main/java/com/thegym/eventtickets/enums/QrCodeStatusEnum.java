@@ -1,4 +1,4 @@
-package com.thegym.eventtickets.domain.enums;
+package com.thegym.eventtickets.enums;
 
 public enum QrCodeStatusEnum {
     ACTIVE,

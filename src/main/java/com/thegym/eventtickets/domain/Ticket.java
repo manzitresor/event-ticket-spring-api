@@ -1,13 +1,14 @@
 package com.thegym.eventtickets.domain;
 
-import com.thegym.eventtickets.domain.enums.TicketStatusEnum;
+import com.thegym.eventtickets.enums.TicketStatusEnum;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import java.rmi.server.UID;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -39,7 +40,8 @@ public class Ticket {
     @JoinColumn(name = "purchaser_id")
     private User purchaser;
 
-
+    @OneToMany(mappedBy = "ticket",fetch = FetchType.LAZY)
+    private List<TicketValidation> ticketValidations = new ArrayList<>();
 
     @LastModifiedDate
     @Column(name = "updated_at")

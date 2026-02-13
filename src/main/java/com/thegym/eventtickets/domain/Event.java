@@ -1,6 +1,6 @@
 package com.thegym.eventtickets.domain;
 
-import com.thegym.eventtickets.domain.enums.EventStatusEnum;
+import com.thegym.eventtickets.enums.EventStatusEnum;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
