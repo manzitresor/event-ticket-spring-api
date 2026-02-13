@@ -28,10 +28,6 @@ public class Ticket {
     @Enumerated(EnumType.STRING)
     private TicketStatusEnum status;
 
-    @CreatedDate
-    @Column(name = "created_at",nullable = false)
-    private LocalDateTime createdAt;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ticket_type_id")
     private TicketType ticketType;
@@ -43,8 +39,14 @@ public class Ticket {
     @OneToMany(mappedBy = "ticket",fetch = FetchType.LAZY)
     private List<TicketValidation> ticketValidations = new ArrayList<>();
 
+    @OneToMany(mappedBy = "ticket", fetch = FetchType.LAZY)
+    private List<QrCode> qrCodes = new ArrayList<>();
+
+    @CreatedDate
+    @Column(name = "created_at",nullable = false)
+    private LocalDateTime createdAt;
+
     @LastModifiedDate
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
 }
