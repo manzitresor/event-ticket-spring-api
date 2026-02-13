@@ -50,6 +50,9 @@ public class User {
     )
     private List<Event> staffingEvents = new ArrayList<>();
 
+    @OneToMany(mappedBy = "purchaser")
+    private List<Ticket> tickets = new ArrayList<>();
+
 
 
     @CreatedDate
