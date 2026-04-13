@@ -1,4 +1,4 @@
-package com.thegym.eventtickets.domain;
+package com.thegym.eventtickets.domain.entities;
 
 
 import jakarta.persistence.*;

@@ -1,7 +1,7 @@
 package com.thegym.eventtickets.services;
 
-import com.thegym.eventtickets.domain.Event;
-import com.thegym.eventtickets.dtos.CreateEventRequest;
+import com.thegym.eventtickets.domain.entities.Event;
+import com.thegym.eventtickets.domain.CreateEventRequest;
 
 import java.util.UUID;
 

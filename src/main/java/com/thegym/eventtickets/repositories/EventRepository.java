@@ -1,7 +1,6 @@
 package com.thegym.eventtickets.repositories;
 
-import com.thegym.eventtickets.domain.Event;
-import lombok.Data;
+import com.thegym.eventtickets.domain.entities.Event;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

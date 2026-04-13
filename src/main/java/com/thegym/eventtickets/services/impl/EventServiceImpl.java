@@ -1,9 +1,9 @@
 package com.thegym.eventtickets.services.impl;
 
-import com.thegym.eventtickets.domain.Event;
-import com.thegym.eventtickets.domain.TicketType;
-import com.thegym.eventtickets.domain.User;
-import com.thegym.eventtickets.dtos.CreateEventRequest;
+import com.thegym.eventtickets.domain.entities.Event;
+import com.thegym.eventtickets.domain.entities.TicketType;
+import com.thegym.eventtickets.domain.entities.User;
+import com.thegym.eventtickets.domain.CreateEventRequest;
 import com.thegym.eventtickets.exceptions.UserNotFoundException;
 import com.thegym.eventtickets.repositories.EventRepository;
 import com.thegym.eventtickets.repositories.UserRepository;

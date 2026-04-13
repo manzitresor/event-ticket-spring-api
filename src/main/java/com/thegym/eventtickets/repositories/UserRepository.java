@@ -1,6 +1,6 @@
 package com.thegym.eventtickets.repositories;
 
-import com.thegym.eventtickets.domain.User;
+import com.thegym.eventtickets.domain.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

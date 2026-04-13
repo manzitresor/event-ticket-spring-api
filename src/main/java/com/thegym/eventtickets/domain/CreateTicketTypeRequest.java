@@ -1,4 +1,4 @@
-package com.thegym.eventtickets.dtos;
+package com.thegym.eventtickets.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

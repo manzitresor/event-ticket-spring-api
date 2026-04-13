@@ -1,26 +1,21 @@
-package com.thegym.eventtickets.dtos;
+package com.thegym.eventtickets.domain.dtos;
 
-import com.thegym.eventtickets.domain.User;
 import com.thegym.eventtickets.enums.EventStatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
-public class CreateEventRequest {
+@RequiredArgsConstructor
+public class CreateEventRequestDto {
     private String name;
-    private String description;
     private LocalDateTime eventStart;
     private LocalDateTime eventEnd;
     private String venue;
     private LocalDateTime salesStart;
     private LocalDateTime salesEndDate;
     private EventStatusEnum status;
-    private List<CreateTicketTypeRequest> ticketTypes = new ArrayList<>();
 }

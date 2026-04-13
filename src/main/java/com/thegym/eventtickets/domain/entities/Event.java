@@ -1,4 +1,4 @@
-package com.thegym.eventtickets.domain;
+package com.thegym.eventtickets.domain.entities;
 
 import com.thegym.eventtickets.enums.EventStatusEnum;
 import jakarta.persistence.*;

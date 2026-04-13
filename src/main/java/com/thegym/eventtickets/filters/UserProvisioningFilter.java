@@ -1,6 +1,6 @@
 package com.thegym.eventtickets.filters;
 
-import com.thegym.eventtickets.domain.User;
+import com.thegym.eventtickets.domain.entities.User;
 import com.thegym.eventtickets.repositories.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
