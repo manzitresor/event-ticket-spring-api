@@ -5,6 +5,7 @@ import com.thegym.eventtickets.domain.TicketType;
 import com.thegym.eventtickets.domain.User;
 import com.thegym.eventtickets.dtos.CreateEventRequest;
 import com.thegym.eventtickets.exceptions.UserNotFoundException;
+import com.thegym.eventtickets.repositories.EventRepository;
 import com.thegym.eventtickets.repositories.UserRepository;
 import com.thegym.eventtickets.services.EventService;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,8 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class EventServiceImpl implements EventService {
     private final UserRepository userRepository;
+    private final EventRepository eventRepository;
+
     @Override
     public Event createEvent(UUID organizerId, CreateEventRequest event) {
         User organizer = userRepository.findById(organizerId).orElseThrow(()-> new UserNotFoundException("User not found"));
@@ -41,6 +44,7 @@ public class EventServiceImpl implements EventService {
         eventToCreate.setSalesEndDate(event.getSalesEndDate());
         eventToCreate.setOrganizer(organizer);
         eventToCreate.setTicketTypes(ticketTypesToCreate);
-        return null;
+
+        return eventRepository.save(eventToCreate);
     }
 }
