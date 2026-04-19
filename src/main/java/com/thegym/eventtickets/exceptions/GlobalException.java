@@ -13,6 +13,13 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @Slf4j
 public class GlobalException {
 
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<ErrorDto> handleUserNotFoundException(UserNotFoundException e) {
+        log.error("Caught User not Found Exception",e);
+        ErrorDto errorDto = new ErrorDto();
+        errorDto.setError(e.getMessage());
+        return new ResponseEntity<>(errorDto, HttpStatus.NOT_FOUND);
+    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorDto> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
@@ -40,8 +47,6 @@ public class GlobalException {
 
         return new ResponseEntity<>(errorDto, HttpStatus.BAD_REQUEST);
     }
-
-
 
     @ExceptionHandler({Exception.class})
     public ResponseEntity<ErrorDto> handleException(Exception ex) {
